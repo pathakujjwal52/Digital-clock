@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalClock</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alkatra:wght@500&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background-color: rgb(77, 205, 77);
+            font: 200px;
+            font-family: 'Alkatra', cursive;
+           text-align: center;
+           color: blueviolet;
+           border: 8px solid black;
+           height: 83vh;
+           width: 55vw;
+           margin-left: 422px;  
+        }
+        h2{
+            font-size: 100px;
+            background-color: aqua;
+            margin: 122px;
+            padding: 22px;
+        }
+        h3{
+            font-size: 50px;
+        }
+        .hour,.minute,.second{
+            height: 135px;
+            width: 130px;
+            margin: auto;
+            background-color: rgb(204, 10, 65);
+            border: 1px;
+            color: aliceblue;
+            border-radius: 522px;
+        }
+        .clock button{
+            font-size: 80px;
+            border: 2px solid whitesmoke;
+            margin-bottom: 103px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Digital  Clock</h2>
+    <h3>India Standard Time </h3>
+
+    <div class="clock">
+        <button class="hour"></button>
+        <button class="minute"></button>
+        <button class="second"></button>
+    </div>
+
+    <script>
+        // Digital clock
+        let hourHand = document.querySelector('.hour');
+        let minHand = document.querySelector('.minute');
+        let secHand = document.querySelector('.second');
+
+        let timer = function(){
+            let currentDate = new Date();
+
+            let getHour = currentDate.getHours();
+
+            let getMin = currentDate.getMinutes();
+
+            let getSec = currentDate.getSeconds();
+
+            hourHand.textContent = getHour;
+
+            minHand.textContent = getMin;
+
+            secHand.textContent = getSec;
+            console.log(currentDate.getDate);
+        }
+
+        setInterval(timer,1000); //1000 = 1sec
+    </script>
+</body>
+</html>
